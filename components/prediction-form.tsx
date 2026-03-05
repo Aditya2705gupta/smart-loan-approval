@@ -68,7 +68,7 @@ export default function PredictionForm() {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/predict", {
+      const response = await fetch("/api/predict_ml", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -125,13 +125,12 @@ export default function PredictionForm() {
                 onClick={() => {
                   if (step.id < currentStep) setCurrentStep(step.id);
                 }}
-                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-all ${
-                  step.id === currentStep
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition-all ${step.id === currentStep
                     ? "bg-primary text-primary-foreground shadow-md"
                     : step.id < currentStep
-                    ? "bg-primary/20 text-primary"
-                    : "bg-muted text-muted-foreground"
-                }`}
+                      ? "bg-primary/20 text-primary"
+                      : "bg-muted text-muted-foreground"
+                  }`}
               >
                 {step.id < currentStep ? (
                   <CheckCircle2 className="h-5 w-5" />
@@ -145,9 +144,8 @@ export default function PredictionForm() {
             </div>
             {index < steps.length - 1 && (
               <div
-                className={`mx-2 h-0.5 flex-1 rounded ${
-                  step.id < currentStep ? "bg-primary/40" : "bg-muted"
-                }`}
+                className={`mx-2 h-0.5 flex-1 rounded ${step.id < currentStep ? "bg-primary/40" : "bg-muted"
+                  }`}
               />
             )}
           </div>
@@ -381,11 +379,10 @@ function ResultView({
     <div className="mx-auto max-w-2xl">
       <div className="rounded-xl border border-border bg-card p-10 shadow-sm text-center">
         <div
-          className={`mx-auto flex h-24 w-24 items-center justify-center rounded-full ${
-            result.approved
+          className={`mx-auto flex h-24 w-24 items-center justify-center rounded-full ${result.approved
               ? "bg-success/10"
               : "bg-destructive/10"
-          }`}
+            }`}
         >
           {result.approved ? (
             <CheckCircle2 className="h-12 w-12 text-success" />
@@ -412,9 +409,8 @@ function ResultView({
           <div className="mt-3 flex items-center justify-center gap-4">
             <div className="h-3 flex-1 rounded-full bg-muted overflow-hidden">
               <div
-                className={`h-full rounded-full transition-all duration-1000 ${
-                  result.approved ? "bg-success" : "bg-destructive"
-                }`}
+                className={`h-full rounded-full transition-all duration-1000 ${result.approved ? "bg-success" : "bg-destructive"
+                  }`}
                 style={{ width: `${result.confidence}%` }}
               />
             </div>
@@ -436,13 +432,12 @@ function ResultView({
                 className="flex items-center gap-3 rounded-lg border border-border px-4 py-3"
               >
                 <div
-                  className={`h-2.5 w-2.5 rounded-full ${
-                    factor.impact === "positive"
+                  className={`h-2.5 w-2.5 rounded-full ${factor.impact === "positive"
                       ? "bg-success"
                       : factor.impact === "negative"
-                      ? "bg-destructive"
-                      : "bg-warning"
-                  }`}
+                        ? "bg-destructive"
+                        : "bg-warning"
+                    }`}
                 />
                 <span className="text-sm text-foreground">{factor.name}</span>
               </div>
@@ -500,9 +495,8 @@ function FormInput({
           min={min}
           max={max}
           step={step}
-          className={`w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary ${
-            prefix ? "pl-8" : ""
-          }`}
+          className={`w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary ${prefix ? "pl-8" : ""
+            }`}
         />
       </div>
     </div>

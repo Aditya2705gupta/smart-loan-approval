@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-card py-12">
+    <footer className="border-t border-[#27272a] bg-[#0c0c0e] py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-6 w-6 text-primary" />
-            <span className="font-serif text-lg font-bold text-foreground">
+            <div className="w-4 h-4 rounded-sm bg-[#5c6df2]" />
+            <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-[#5c6df2] to-[#2bd9a5] text-transparent bg-clip-text">
               CreditWise
             </span>
           </div>

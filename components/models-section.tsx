@@ -30,11 +30,13 @@ export default function ModelsSection() {
     <section id="models" className="py-20 lg:py-28 bg-secondary">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#2bd9a5]">
             Technology
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Our ML Models
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
+            <span className="bg-gradient-to-r from-[#7b8cf6] to-[#b0bbf6] text-transparent bg-clip-text">
+              Our ML Models
+            </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             CreditWise uses two proven machine learning algorithms trained on
@@ -46,9 +48,9 @@ export default function ModelsSection() {
           {models.map((model) => (
             <div
               key={model.name}
-              className="rounded-xl border border-border bg-card p-8 shadow-sm"
+              className="rounded-2xl border border-[#27272a] bg-[#18181b] p-8 shadow-sm"
             >
-              <h3 className="font-serif text-2xl font-bold text-foreground">
+              <h3 className="text-2xl font-bold text-white">
                 {model.name}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -58,13 +60,13 @@ export default function ModelsSection() {
                 {model.metrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="flex items-center gap-3 rounded-lg bg-secondary p-4"
+                    className="flex items-center gap-3 rounded-lg border border-[#27272a] bg-[#0c0c0e] p-4"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10">
-                      <metric.icon className="h-5 w-5 text-primary" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#27272a]">
+                      <metric.icon className="h-5 w-5 text-[#2bd9a5]" />
                     </div>
                     <div>
-                      <p className="text-lg font-bold text-foreground">
+                      <p className="text-lg font-bold text-white">
                         {metric.value}
                       </p>
                       <p className="text-xs text-muted-foreground">
